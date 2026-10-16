@@ -25,10 +25,10 @@ export interface ServiceLocationData {
 
 export const siteConfig = {
   name: "Website Development Expert",
-  siteUrl: "https://websitedevelopmentexpert.com",
+  siteUrl: "https://websitedevelopmentexpert.in",
   phone: "+91 99906 13140",
   rawPhone: "+919990613140",
-  email: "contact@websitedevelopmentexpert.com",
+  email: "contact@websitedevelopmentexpert.in",
   googleSheetUrl:
     process.env.GOOGLE_SHEET_URL ||
     "https://script.google.com/macros/s/AKfycbz6kPgNw555NUGM33b2_rfP6pV5p8BO_CVy0cVTBThiCZPcHawhIx7r9Pv6MACju-lD/exec",

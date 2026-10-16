@@ -401,7 +401,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
                   <span>Call: +91 99906 13140</span>
                 </Link>
                 <Link
-                  href="mailto:contact@websitedevelopmentexpert.com"
+                  href="mailto:contact@websitedevelopmentexpert.in"
                   className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-3.5 text-sm font-semibold text-slate-600 hover:border-slate-400 transition-all"
                 >
                   Email Team
