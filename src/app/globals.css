@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --brand: #ff6b1e;
+  --brand-hover: #e55510;
+  --brand-light: #fff5ee;
+  --brand-ring: rgba(255, 107, 30, 0.3);
+}
+
+@theme {
+  --color-brand: #ff6b1e;
+  --color-brand-hover: #e55510;
+  --color-brand-light: #fff5ee;
+  --color-brand-subtle: #ffede3;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
