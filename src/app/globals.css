@@ -9,13 +9,6 @@
   --brand-ring: rgba(255, 107, 30, 0.3);
 }
 
-@theme {
-  --color-brand: #ff6b1e;
-  --color-brand-hover: #e55510;
-  --color-brand-light: #fff5ee;
-  --color-brand-subtle: #ffede3;
-}
-
 html,
 body {
   overflow-x: hidden;

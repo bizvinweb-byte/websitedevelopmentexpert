@@ -303,7 +303,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8 lg:gap-14 items-center">
             {/* Left Column: Visual Image with Floating Experience Badge */}
             <div className="relative w-full order-1">
-              <div className="relative h-[210px] sm:h-[420px] lg:h-[500px] w-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-md sm:shadow-xl border border-slate-200/90 group">
+              <div style={{ position: "relative" }} className="relative h-[210px] sm:h-[420px] lg:h-[500px] w-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-md sm:shadow-xl border border-slate-200/90 group">
                 <Image
                   src="/images/why-website.jpg"
                   alt="Web development engineers and UI designers collaborating on web applications"
@@ -588,7 +588,7 @@ export default function Home() {
 
             {/* Right Visual Column (5 cols) - High-Tech Agency Showcase */}
             <div className="lg:col-span-5 relative">
-              <div className="relative h-[220px] sm:h-[460px] w-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-2xl border border-slate-100 group">
+              <div style={{ position: "relative" }} className="relative h-[220px] sm:h-[460px] w-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-2xl border border-slate-100 group">
                 <Image
                   src="/images/india-web-agency.jpg"
                   alt="Senior web development and engineering team in India building enterprise websites"
