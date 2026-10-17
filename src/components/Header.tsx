@@ -14,20 +14,34 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/95 backdrop-blur-md transition-all shadow-2xs">
       <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
         {/* Brand Logo */}
-        <Link
-          href="/"
-          className="group flex items-center transition-transform hover:scale-102"
-          aria-label="Website Development Expert Home"
-        >
-          <Image
-            src="/images/webdev-logo.png"
-            alt="Website Development Expert - Custom Web & Shopify Solutions"
-            width={200}
-            height={48}
-            className="h-8 sm:h-11 w-auto object-contain"
-            priority
-          />
-        </Link>
+        <div className="flex items-center gap-2.5">
+          <Link
+            href="/"
+            className="group flex items-center transition-transform hover:scale-102"
+            aria-label="Website Development Expert Home"
+          >
+            <Image
+              src="/images/webdev-logo.png"
+              alt="Website Development Expert - Custom Web & Shopify Solutions"
+              width={200}
+              height={48}
+              className="h-8 sm:h-11 w-auto object-contain"
+              priority
+            />
+          </Link>
+          <div className="hidden sm:flex items-center pl-2 border-l border-slate-200">
+            <a
+              href={siteConfig.parentCompany.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 rounded-full bg-slate-100 hover:bg-[#ff6b1e]/10 text-slate-600 hover:text-[#ff6b1e] px-2.5 py-0.5 text-[11px] font-semibold transition"
+              title="Official Venture of Brandmingo"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff6b1e]"></span>
+              By Brandmingo
+            </a>
+          </div>
+        </div>
 
         {/* Clean Semantic Navigation - Zero City Clutter */}
         <nav

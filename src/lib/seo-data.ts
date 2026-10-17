@@ -39,6 +39,12 @@ export const siteConfig = {
     postalCode: "201309",
     country: "IN",
   },
+  parentCompany: {
+    name: "Brandmingo",
+    url: "https://brandmingo.com",
+    tagline: "A Venture of Brandmingo",
+    brandSlug: "brandmingo",
+  },
 };
 
 // All-India Master Districts & Cities Database

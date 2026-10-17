@@ -12,19 +12,32 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand & Overview */}
           <div className="lg:col-span-2 space-y-4">
-            <Link
-              href="/"
-              className="inline-flex items-center rounded-2xl bg-white px-4 py-2.5 shadow-md hover:scale-102 transition-transform border border-slate-200/20"
-              aria-label="Website Development Expert Home"
-            >
-              <Image
-                src="/images/webdev-logo.png"
-                alt="Website Development Expert - Web & Shopify Development"
-                width={220}
-                height={52}
-                className="h-9 sm:h-10 w-auto object-contain"
-              />
-            </Link>
+            <div className="flex flex-col gap-1.5">
+              <Link
+                href="/"
+                className="inline-flex items-center rounded-2xl bg-white px-4 py-2.5 shadow-md hover:scale-102 transition-transform border border-slate-200/20 w-fit"
+                aria-label="Website Development Expert Home"
+              >
+                <Image
+                  src="/images/webdev-logo.png"
+                  alt="Website Development Expert - Web & Shopify Development"
+                  width={220}
+                  height={52}
+                  className="h-9 sm:h-10 w-auto object-contain"
+                />
+              </Link>
+              <div className="pt-1">
+                <a
+                  href={siteConfig.parentCompany.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ff6b1e] hover:text-white transition tracking-wide"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff6b1e]"></span>
+                  A Specialized Venture of Brandmingo ↗
+                </a>
+              </div>
+            </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               India&apos;s premier web development and digital engineering firm. We
               engineer Google Page 1 SEO compliant, high-conversion web
@@ -282,7 +295,18 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-8 border-t border-slate-800/80 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {currentYear} Website Development Expert. All rights reserved.</p>
+          <p>
+            © {currentYear} Website Development Expert — A Venture of{" "}
+            <a
+              href={siteConfig.parentCompany.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-white underline font-medium transition"
+            >
+              Brandmingo
+            </a>
+            . All rights reserved.
+          </p>
           <div className="flex gap-6">
             <Link
               href="/privacy-policy"

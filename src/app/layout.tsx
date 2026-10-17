@@ -48,10 +48,19 @@ export const metadata: Metadata = {
     "website development cost in india",
     "best web design company near me",
     "technical seo website development",
+    "brandmingo",
+    "brandmingo web development",
+    "brandmingo website development expert",
+    "website development expert by brandmingo",
   ],
-  authors: [{ name: "Website Development Expert Team" }],
-  creator: "Website Development Expert",
-  publisher: "Website Development Expert",
+  authors: [
+    {
+      name: "Brandmingo & Website Development Expert Team",
+      url: siteConfig.parentCompany.url,
+    },
+  ],
+  creator: "Brandmingo - Website Development Expert",
+  publisher: "Brandmingo",
   icons: {
     icon: [
       { url: "/icon.png", sizes: "192x192", type: "image/png" },
@@ -134,10 +143,21 @@ export default function RootLayout({
         caption: "Best Website Development Company in India",
       },
       {
+        "@type": "Organization",
+        "@id": "https://brandmingo.com/#organization",
+        name: siteConfig.parentCompany.name,
+        url: siteConfig.parentCompany.url,
+        logo: `${siteConfig.siteUrl}/images/brandmingo-logo.png`,
+        sameAs: [siteConfig.parentCompany.url],
+      },
+      {
         "@type": "ProfessionalService",
         "@id": `${siteConfig.siteUrl}/#organization`,
         name: siteConfig.name,
         url: siteConfig.siteUrl,
+        parentOrganization: {
+          "@id": "https://brandmingo.com/#organization",
+        },
         logo: {
           "@type": "ImageObject",
           "@id": `${siteConfig.siteUrl}/#logo`,

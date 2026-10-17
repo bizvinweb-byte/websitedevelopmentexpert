@@ -135,8 +135,9 @@ export default function Home() {
           "India's premier digital engineering and website development agency.",
         publisher: {
           "@type": "Organization",
-          name: siteConfig.name,
-          url: siteConfig.siteUrl,
+          name: siteConfig.parentCompany.name,
+          url: siteConfig.parentCompany.url,
+          logo: `${siteConfig.siteUrl}/images/brandmingo-logo.png`,
           contactPoint: {
             "@type": "ContactPoint",
             telephone: siteConfig.phone,
@@ -144,6 +145,11 @@ export default function Home() {
             areaServed: "IN",
             availableLanguage: ["en", "hi"],
           },
+        },
+        parentOrganization: {
+          "@type": "Organization",
+          name: siteConfig.parentCompany.name,
+          url: siteConfig.parentCompany.url,
         },
       },
       {
@@ -196,7 +202,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-[#ff6b1e]/20 bg-[#fff5ee] px-3.5 py-1 sm:px-4 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-[#ff6b1e] shadow-2xs mb-4 sm:mb-6">
             <Award className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#ff6b1e]" />
-            <span>#1 Rated Web Design &amp; Development Agency in India</span>
+            <span>#1 Rated Web &amp; Shopify Agency • A Venture of Brandmingo</span>
           </div>
 
           <h1
