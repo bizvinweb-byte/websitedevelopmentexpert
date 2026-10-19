@@ -156,7 +156,7 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${siteConfig.siteUrl}/#webpage`,
         url: siteConfig.siteUrl,
-        name: "Best Website Development Company in India | Top WebDev Expert",
+        name: "Best Website Development Company in Noida & India | Top WebDev Expert",
         isPartOf: {
           "@id": `${siteConfig.siteUrl}/#website`,
         },
@@ -170,7 +170,7 @@ export default function Home() {
         image: `${siteConfig.siteUrl}/images/webdev-banner.png`,
         thumbnailUrl: `${siteConfig.siteUrl}/images/webdev-banner.png`,
         description:
-          "Top-rated website development company in India engineering ultra-fast Next.js, React, and Shopify websites with 100% Core Web Vitals to rank #1 on Google search results.",
+          "Top-rated website development company in Noida Sector 62 engineering ultra-fast Next.js, React, and Shopify websites with 100% Core Web Vitals to rank #1 on Google search results across India.",
       },
       {
         "@type": "FAQPage",
@@ -181,6 +181,16 @@ export default function Home() {
             "@type": "Answer",
             text: faq.answer,
           },
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Enterprise Website Development Services",
+        itemListElement: coreServices.map((service, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: service.title,
+          description: service.description,
         })),
       },
     ],
@@ -202,7 +212,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-[#ff6b1e]/20 bg-[#fff5ee] px-3.5 py-1 sm:px-4 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-[#ff6b1e] shadow-2xs mb-4 sm:mb-6">
             <Award className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#ff6b1e]" />
-            <span>#1 Rated Web &amp; Shopify Agency • A Venture of Brandmingo</span>
+            <span>#1 Web Development Agency in Noida Sector 62 • Serving Clients Pan-India</span>
           </div>
 
           <h1
@@ -211,12 +221,12 @@ export default function Home() {
           >
             Best Website Development Company in{" "}
             <span className="text-[#ff6b1e]">
-              India
+              Noida &amp; India
             </span>
           </h1>
 
           <p className="mx-auto mt-3 sm:mt-6 max-w-3xl text-xs sm:text-lg text-slate-600 font-normal leading-relaxed">
-            We engineer high-speed Next.js web applications, high-converting Shopify storefronts, and enterprise custom websites designed to dominate Google Page 1 search rankings and convert visitors into clients.
+            Headquartered at ITHUM Tower, Sector 62, Noida. We engineer high-speed Next.js web applications, high-converting Shopify storefronts, and enterprise custom websites designed to dominate Google Page 1 search rankings across Noida, Delhi NCR, and all of India.
           </p>
 
           <div className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-sm sm:max-w-none mx-auto">

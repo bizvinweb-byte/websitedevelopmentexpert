@@ -107,8 +107,10 @@ export default async function ServiceLocationPage({ params }: PageProps) {
       telephone: siteConfig.phone,
       address: {
         "@type": "PostalAddress",
-        addressLocality: data.cityName,
-        addressRegion: data.stateName,
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        addressRegion: siteConfig.address.region,
+        postalCode: siteConfig.address.postalCode,
         addressCountry: "IN",
       },
     },
@@ -153,7 +155,7 @@ export default async function ServiceLocationPage({ params }: PageProps) {
             <div className="mx-auto max-w-4xl text-center">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fff5ee] border border-[#ff6b1e]/25 text-[#ff6b1e] text-xs font-semibold mb-6 shadow-2xs">
                 <Sparkles className="w-3.5 h-3.5 text-[#ff6b1e]" />
-                <span>Premier Web Development in {data.cityName}, {data.stateName}</span>
+                <span>Premier Web Development for {data.cityName} • Engineered at Noida HQ</span>
               </div>
 
               {/* Exact Target H1 for Google Rank */}

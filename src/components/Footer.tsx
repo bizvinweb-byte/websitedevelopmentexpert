@@ -204,7 +204,7 @@ export default function Footer() {
         <div className="mt-10 pt-8 border-t border-slate-800/80">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
             <MapPin className="w-3.5 h-3.5 text-[#ff6b1e]" />
-            <span>Popular Service Locations Across India</span>
+            <span>Pan-India Project Delivery Coverage (Engineered from Noida HQ)</span>
           </p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-500">
             <Link

@@ -24,6 +24,14 @@ export const FAQ_DATA: FaqItem[] = [
     highlight: "ITHUM Tower, Sector 62, Noida Development Center",
   },
   {
+    id: "pan-india-services",
+    category: "general",
+    question: "Do you provide website development services across India outside Noida?",
+    answer:
+      "Yes, absolutely. While our primary corporate engineering center is based at ITHUM Tower, Sector 62, Noida, we engineer and deliver websites for leading enterprises, startups, and D2C brands across all of India (including Mumbai, Bengaluru, Hyderabad, Pune, Kolkata, and Jaipur). We provide daily milestone updates, live staging previews, and dedicated project managers.",
+    highlight: "Noida HQ • Pan-India Remote & On-Site Delivery",
+  },
+  {
     id: "development-cost",
     category: "pricing",
     question: "What is the cost of website development in India in 2026?",

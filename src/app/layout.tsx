@@ -23,22 +23,25 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "Best Website Development Company in India | Top WebDev Expert",
+    default: "Best Website Development Company in Noida & India | WebDev Expert",
     template: "%s | Website Development Expert",
   },
   description:
-    "Top-rated website development company in India. We engineer ultra-fast Next.js, React, and Shopify websites with 100% Core Web Vitals to rank #1 on Google search results.",
+    "Top-rated website development company in Noida (Sector 62) & Pan-India. We engineer ultra-fast Next.js, React, and Shopify websites with 100% Core Web Vitals to rank #1 on Google search results.",
   keywords: [
-    "best website development company in india",
     "website development company in noida",
     "website development company in noida sector 62",
+    "best website development company in noida",
+    "web design company in noida",
+    "website developer in noida",
     "website development company in delhi ncr",
-    "top website development company",
+    "best website development company in india",
+    "top website development company in india",
     "web development agency india",
     "custom website development services",
     "ecommerce website development company",
     "shopify development company india",
-    "shopify plus agency",
+    "shopify plus agency noida",
     "next js web development company",
     "react js web development agency",
     "mern stack development services",
@@ -110,6 +113,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteConfig.siteUrl,
+  },
+  other: {
+    thumbnail: `${siteConfig.siteUrl}/images/webdev-banner.png`,
+    "geo.region": "IN-UP",
+    "geo.placename": "Noida, Sector 62",
+    "geo.position": "28.6280;77.3649",
+    ICBM: "28.6280, 77.3649",
   },
 };
 
@@ -195,6 +205,13 @@ export default function RootLayout({
           latitude: "28.6280",
           longitude: "77.3649",
         },
+        areaServed: [
+          { "@type": "City", name: "Noida" },
+          { "@type": "AdministrativeArea", name: "Delhi NCR" },
+          { "@type": "AdministrativeArea", name: "Greater Noida" },
+          { "@type": "AdministrativeArea", name: "Gurugram" },
+          { "@type": "Country", name: "India" },
+        ],
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
@@ -216,26 +233,8 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${fontSans.variable} scroll-smooth antialiased`}>
-      <head>
-        {/* Google SERP Favicon Standards (Consistent across Google Search & Browser) */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/icon.png" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-        {/* Google Search Snippet Right-Side Thumbnail / Banner Meta Tags */}
-        <meta name="thumbnail" content={`${siteConfig.siteUrl}/images/webdev-banner.png`} />
-        <meta property="og:image" content={`${siteConfig.siteUrl}/images/webdev-banner.png`} />
-        <meta property="og:image:secure_url" content={`${siteConfig.siteUrl}/images/webdev-banner.png`} />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Best Website Development Company in India" />
-        <meta name="twitter:image" content={`${siteConfig.siteUrl}/images/webdev-banner.png`} />
-
-        <JsonLd data={globalSchema} />
-      </head>
       <body className="flex min-h-screen flex-col bg-white text-slate-900 font-sans selection:bg-[#ff6b1e] selection:text-white">
+        <JsonLd data={globalSchema} />
         <EnquiryProvider>
           <Header />
           <main id="main-content" className="flex-1">
