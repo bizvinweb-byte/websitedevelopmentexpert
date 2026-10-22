@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit:seo": "node --experimental-strip-types scripts/seo-audit.ts",
+    "ping:sitemap": "node --experimental-strip-types scripts/ping-sitemap.ts"
   },
   "dependencies": {
     "lucide-react": "^1.57.0",

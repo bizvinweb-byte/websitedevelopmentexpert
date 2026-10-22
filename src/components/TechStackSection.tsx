@@ -83,7 +83,7 @@ const TECH_STACK: TechItem[] = [
     capabilities: [
       "Server Components (RSC)",
       "Dynamic Route Handlers",
-      "100/100 Core Web Vitals",
+      "Core Web Vitals Optimization",
       "Automated SEO Metadata & Sitemaps",
     ],
   },

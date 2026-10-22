@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { siteConfig } from "@/lib/seo-data";
 import { EnquiryProvider } from "@/components/EnquiryModal";
+import StickyMobileCta from "@/components/StickyMobileCta";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -23,46 +26,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "Best Website Development Company in Noida & India | WebDev Expert",
+    default: "Website Development Company in Noida | India-Wide Web & Shopify Experts",
     template: "%s | Website Development Expert",
   },
   description:
-    "Top-rated website development company in Noida (Sector 62) & Pan-India. We engineer ultra-fast Next.js, React, and Shopify websites with 100% Core Web Vitals to rank #1 on Google search results.",
-  keywords: [
-    "website development company in noida",
-    "website development company in noida sector 62",
-    "best website development company in noida",
-    "web design company in noida",
-    "website developer in noida",
-    "website development company in delhi ncr",
-    "best website development company in india",
-    "top website development company in india",
-    "web development agency india",
-    "custom website development services",
-    "ecommerce website development company",
-    "shopify development company india",
-    "shopify plus agency noida",
-    "next js web development company",
-    "react js web development agency",
-    "mern stack development services",
-    "b2b website design company",
-    "corporate web application development",
-    "startup website development",
-    "website development cost in india",
-    "best web design company near me",
-    "technical seo website development",
-    "brandmingo",
-    "brandmingo web development",
-    "brandmingo website development expert",
-    "website development expert by brandmingo",
-  ],
+    "Top website development company in Noida Sector 62. We build fast Next.js & Shopify websites for businesses across India. Get a free proposal today.",
   authors: [
     {
-      name: "Brandmingo & Website Development Expert Team",
-      url: siteConfig.parentCompany.url,
+      name: "Website Development Expert - Brandmingo",
+      url: siteConfig.siteUrl,
     },
   ],
-  creator: "Brandmingo - Website Development Expert",
+  creator: "Website Development Expert",
   publisher: "Brandmingo",
   icons: {
     icon: [
@@ -91,31 +66,36 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: siteConfig.siteUrl,
-    siteName: "Website Development Expert",
-    title: "Best Website Development Company in India | Custom Web & Shopify Solutions",
+    siteName: siteConfig.name,
+    title: "Website Development Company in Noida | India-Wide Web & Shopify Experts",
     description:
-      "Enterprise website development, Next.js engineering, and Shopify solutions built with Google Page 1 ranking architecture and 100% Core Web Vitals perfection.",
+      "Noida-based website development company engineering fast Next.js & Shopify websites for businesses across India. Get a free technical consultation.",
     images: [
       {
         url: `${siteConfig.siteUrl}/images/webdev-banner.png`,
         width: 1200,
         height: 630,
-        alt: "Best Website Development Company in India",
+        alt: "Website Development Company in Noida - Serving Pan-India",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Website Development Company in India | Custom Web & Shopify Solutions",
+    title: "Website Development Company in Noida | India-Wide Web & Shopify Experts",
     description:
-      "Modern, fast, SEO-first website development and Shopify solutions to rank on Google first page.",
+      "Noida-based web development firm building high-performance Next.js and Shopify stores for businesses across India.",
     images: [`${siteConfig.siteUrl}/images/webdev-banner.png`],
   },
   alternates: {
     canonical: siteConfig.siteUrl,
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || "google-site-verification-placeholder",
+    other: {
+      "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION || "bing-verification-placeholder",
+    },
+  },
   other: {
-    thumbnail: `${siteConfig.siteUrl}/images/webdev-banner.png`,
     "geo.region": "IN-UP",
     "geo.placename": "Noida, Sector 62",
     "geo.position": "28.6280;77.3649",
@@ -128,7 +108,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Global Schema for Organization and Professional Web Service with Primary Image for Google SERP
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const clarityId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+
   const globalSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -138,19 +120,10 @@ export default function RootLayout({
         url: siteConfig.siteUrl,
         name: siteConfig.name,
         description:
-          "Best Website Development Company in India specializing in Next.js, React, and Shopify.",
+          "Website development company based in Noida Sector 62, engineering custom Next.js, React, and Shopify websites for businesses across India.",
         publisher: {
           "@id": `${siteConfig.siteUrl}/#organization`,
         },
-      },
-      {
-        "@type": "ImageObject",
-        "@id": `${siteConfig.siteUrl}/#primaryimage`,
-        url: `${siteConfig.siteUrl}/images/webdev-banner.png`,
-        contentUrl: `${siteConfig.siteUrl}/images/webdev-banner.png`,
-        width: 1200,
-        height: 630,
-        caption: "Best Website Development Company in India",
       },
       {
         "@type": "Organization",
@@ -161,7 +134,7 @@ export default function RootLayout({
         sameAs: [siteConfig.parentCompany.url],
       },
       {
-        "@type": "ProfessionalService",
+        "@type": ["ProfessionalService", "LocalBusiness"],
         "@id": `${siteConfig.siteUrl}/#organization`,
         name: siteConfig.name,
         url: siteConfig.siteUrl,
@@ -173,45 +146,32 @@ export default function RootLayout({
           "@id": `${siteConfig.siteUrl}/#logo`,
           url: `${siteConfig.siteUrl}/images/webdev-icon.png`,
           contentUrl: `${siteConfig.siteUrl}/images/webdev-icon.png`,
-          caption: "Website Development Expert Favicon & Logo",
+          caption: "Website Development Expert Logo",
         },
         image: [
           `${siteConfig.siteUrl}/images/webdev-banner.png`,
           `${siteConfig.siteUrl}/images/webdev-icon.png`,
         ],
-        primaryImageOfPage: {
-          "@id": `${siteConfig.siteUrl}/#primaryimage`,
-        },
         telephone: siteConfig.phone,
         email: siteConfig.email,
         priceRange: "$$",
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          reviewCount: "184",
-          bestRating: "5",
-          worstRating: "1",
-        },
         address: {
           "@type": "PostalAddress",
           streetAddress: siteConfig.address.street,
           addressLocality: siteConfig.address.city,
           addressRegion: siteConfig.address.region,
           postalCode: siteConfig.address.postalCode,
-          addressCountry: siteConfig.address.country,
+          addressCountry: "IN",
         },
         geo: {
           "@type": "GeoCoordinates",
           latitude: "28.6280",
           longitude: "77.3649",
         },
-        areaServed: [
-          { "@type": "City", name: "Noida" },
-          { "@type": "AdministrativeArea", name: "Delhi NCR" },
-          { "@type": "AdministrativeArea", name: "Greater Noida" },
-          { "@type": "AdministrativeArea", name: "Gurugram" },
-          { "@type": "Country", name: "India" },
-        ],
+        areaServed: {
+          "@type": "Country",
+          name: "India",
+        },
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
@@ -233,6 +193,53 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${fontSans.variable} scroll-smooth antialiased`}>
+      <head>
+        {/* Google Consent Mode v2 Default (DPDP Compliant) */}
+        <Script id="google-consent-mode" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'wait_for_update': 500
+            });
+          `}
+        </Script>
+
+        {/* Google Analytics 4 */}
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}', { page_path: window.location.pathname });
+              `}
+            </Script>
+          </>
+        )}
+
+        {/* Microsoft Clarity Heatmaps & Session Recording */}
+        {clarityId && (
+          <Script id="microsoft-clarity" strategy="afterInteractive">
+            {`
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${clarityId}");
+            `}
+          </Script>
+        )}
+      </head>
       <body className="flex min-h-screen flex-col bg-white text-slate-900 font-sans selection:bg-[#ff6b1e] selection:text-white">
         <JsonLd data={globalSchema} />
         <EnquiryProvider>
@@ -241,6 +248,8 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <StickyMobileCta />
+          <CookieConsentBanner />
         </EnquiryProvider>
       </body>
     </html>

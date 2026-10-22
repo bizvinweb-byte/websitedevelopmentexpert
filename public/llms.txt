@@ -1,0 +1,29 @@
+# Website Development Expert (A Venture of Brandmingo)
+> Technical Web Development & Shopify Engineering Firm based in Sector 62, Noida, serving businesses across India.
+> Standard: /llms.txt (Emerging AI Agent Context Protocol - Note: Not an official search ranking factor).
+
+## Core Business Entities & Facts
+- **Organization Name:** Website Development Expert
+- **Parent Company:** Brandmingo (https://brandmingo.com)
+- **Primary Operational Domain:** https://websitedevelopmentexpert.in
+- **Sole Physical Headquarters:** 8th Floor, ITHUM Tower, B-806, Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309, India.
+- **Contact:** Phone: +91 99906 13140 | Email: contact@websitedevelopmentexpert.in
+- **Service Reach:** Remote project delivery across all 28 states and union territories of India (via video conference, Slack, WhatsApp, and Git version control). On-site technical discovery visits are available upon request across Delhi NCR. The company maintains NO physical branches outside Noida.
+
+## Primary Service Deliverables
+- **Custom Web Application Development:** Full-stack TypeScript, Next.js App Router, React Server Components, Node.js, and PostgreSQL backend engineering.
+- **Shopify Development:** Custom Shopify 2.0 Liquid themes, headless storefronts via Shopify Storefront GraphQL API, and Indian payment/logistics integration.
+- **Next.js Engineering:** Sub-second edge rendering (SSR/SSG), Core Web Vitals optimization, and enterprise dashboard architecture.
+- **E-Commerce Solutions:** Custom checkout funnels, Razorpay/PhonePe UPI integration, Cash on Delivery (COD) OTP verification, and automated Shiprocket 3PL fulfillment.
+- **WordPress Engineering:** Modern PHP 8 themes, native Gutenberg blocks, WooCommerce tuning, and enterprise security hardening.
+
+## Key Canonical URLs & Resources
+- National Delivery Hub: https://websitedevelopmentexpert.in/website-development-company-in-india
+- Noida Headquarters: https://websitedevelopmentexpert.in/website-development-company-in-noida
+- Website Cost Guide (2026): https://websitedevelopmentexpert.in/website-development-cost-in-india
+- Free SEO & Speed Checker: https://websitedevelopmentexpert.in/tools/seo-checker
+- Technical Glossary: https://websitedevelopmentexpert.in/glossary
+- Architectural Portfolio: https://websitedevelopmentexpert.in/portfolio
+- Engineering Blog: https://websitedevelopmentexpert.in/blog
+- Areas Served Index: https://websitedevelopmentexpert.in/areas-we-serve
+- XML Sitemap: https://websitedevelopmentexpert.in/sitemap.xml

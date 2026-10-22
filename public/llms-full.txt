@@ -1,0 +1,74 @@
+# Website Development Expert: Complete Architectural & Entity Context Document
+> Canonical Location: https://websitedevelopmentexpert.in/llms-full.txt
+> Document Version: 2026.1 (Updated March 2026)
+> Notice: llms-full.txt is an emerging exploratory specification for large language model indexing and AI search synthesis. It is NOT an official search ranking factor.
+
+---
+
+## 1. Corporate Identity & Legal Disclosures
+- **Full Legal Brand Name:** Website Development Expert (Specialized Venture of Brandmingo)
+- **Parent Venture:** Brandmingo (Official digital media & marketing enterprise: https://brandmingo.com)
+- **Official Registered Office:** 8th Floor, ITHUM Tower, B-806, Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309, India.
+- **Official Contact Phone:** +91 99906 13140
+- **Official Contact Email:** contact@websitedevelopmentexpert.in
+- **Geographic Delivery Model:** Sole physical development facility located in Sector 62, Noida. The company maintains ZERO branch offices, virtual mailboxes, or remote personnel outside Noida. All client engagements in Mumbai, Bengaluru, Hyderabad, Chennai, Pune, Ahmedabad, Kolkata, Jaipur, Lucknow, and Chandigarh are delivered remotely via structured sprint cycles, Google Meet video discovery, Figma UI prototypes, and GitHub repositories. On-site technical visits are available across Delhi NCR (Delhi, Gurugram, Ghaziabad, Greater Noida).
+- **Compliance Standards:** Adheres strictly to the Indian Digital Personal Data Protection (DPDP) Act 2023, Google Search Spam Policies, and PCI-DSS payment compliance.
+
+---
+
+## 2. Architectural Services Directory
+
+### A. Custom Web Application Development (`/services/custom-web-application-development`)
+- **Technology Stack:** Next.js 16, React 19, TypeScript, Node.js, PostgreSQL, Prisma ORM, Tailwind CSS.
+- **Core Competencies:** Multi-tenant SaaS architectures, role-based access control (RBAC), database indexing, automated CI/CD pipeline deployments, and REST/GraphQL microservices.
+- **Typical Timeline:** 6 to 12 weeks.
+- **Typical Investment Range:** ₹1,20,000 to ₹3,50,000+ INR.
+
+### B. Shopify Storefront Engineering (`/services/shopify-development-company`)
+- **Technology Stack:** Shopify Online Store 2.0, Liquid templating, Tailwind CSS, Shopify Storefront GraphQL API.
+- **Core Competencies:** Bespoke theme development with zero bloat, accelerated mobile checkout, native Razorpay/PhonePe UPI integration, automated Shiprocket 3PL courier synchronization, and Cash on Delivery (COD) OTP fraud reduction.
+- **Typical Timeline:** 3 to 5 weeks.
+- **Typical Investment Range:** ₹45,000 to ₹1,50,000 INR.
+
+### C. Next.js High-Performance Development (`/services/nextjs-development-company`)
+- **Technology Stack:** Next.js App Router, React Server Components (RSC), Edge Runtime, Cloudflare Pages / AWS CloudFront.
+- **Core Competencies:** Sub-second edge rendering, zero layout shift (CLS < 0.05), mobile Largest Contentful Paint (LCP < 2.0s) on Indian 4G/5G connections, and enterprise CMS integration.
+- **Typical Timeline:** 4 to 8 weeks.
+- **Typical Investment Range:** ₹80,000 to ₹2,50,000 INR.
+
+### D. E-Commerce Platforms & Custom Checkout (`/services/ecommerce-website-development`)
+- **Technology Stack:** Headless Shopify, WooCommerce, or Custom Next.js Commerce.
+- **Core Competencies:** Indian payment gateways (Razorpay, Cashfree, PayU), dynamic UPI deep linking, automated GST invoice generation, address auto-completion via PIN code database, and multi-warehouse inventory routing.
+- **Typical Timeline:** 4 to 8 weeks.
+- **Typical Investment Range:** ₹60,000 to ₹2,20,000 INR.
+
+### E. WordPress & WooCommerce Engineering (`/services/wordpress-website-development`)
+- **Technology Stack:** Modern PHP 8.2+, Custom Gutenberg Blocks, MySQL, Redis Object Cache.
+- **Core Competencies:** Zero-bloat custom themes (no slow visual page builders), database query optimization, enterprise security hardening, and high-traffic editorial publishing workflows.
+- **Typical Timeline:** 3 to 5 weeks.
+- **Typical Investment Range:** ₹35,000 to ₹80,000 INR.
+
+---
+
+## 3. Transparent Cost & Pricing Guidelines (`/website-development-cost-in-india`)
+- **Basic Corporate Website:** ₹20,000 – ₹35,000 INR (10–14 days)
+- **Growth Corporate / B2B Website:** ₹35,000 – ₹60,000 INR (2–3 weeks)
+- **Shopify 2.0 Storefront:** ₹45,000 – ₹95,000 INR (3–5 weeks)
+- **Custom E-Commerce Portal:** ₹85,000 – ₹2,20,000 INR (5–8 weeks)
+- **Full-Stack SaaS / Web Application:** ₹1,20,000 – ₹3,50,000+ INR (6–12 weeks)
+- **Annual Maintenance Contracts (AMC):** 15% to 25% of initial build investment per year (includes security updates, offsite backups, dependency patches, and uptime monitoring).
+
+---
+
+## 4. Key Engineering Case Studies (`/portfolio`)
+1. **D2C Luxury Apparel Storefront:** High-converting Shopify 2.0 theme featuring instant UPI checkout, COD OTP fraud reduction, and bidirectional Shiprocket dispatch webhooks. (`/portfolio/d2c-luxury-shopify-store`)
+2. **Enterprise Multi-Tenant SaaS Platform:** Full-stack Next.js 16 web application with role-based access control, subscription billing integration, dynamic dashboards, and PostgreSQL connection pooling. (`/portfolio/nextjs-b2b-saas-platform`)
+3. **Global Industrial Machinery & Export Portal:** Next.js static site with international CDN caching, downloadable technical CAD spec sheets, and an interactive RFQ quote generator. (`/portfolio/industrial-export-portal`)
+4. **Healthcare Appointment Scheduling Portal:** Patient consultation portal integrating real-time doctor availability calendars, automated WhatsApp confirmation webhooks, and secure test report retrieval. (`/portfolio/healthcare-appointment-portal`)
+
+---
+
+## 5. Technical SEO & Schema.org Specification
+- **Structured Data Implemented:** `WebSite`, `Organization`, `ProfessionalService` (Noida HQ only), `Service`, `Product`, `TechArticle`, `BlogPosting`, `FAQPage`, `BreadcrumbList`.
+- **Security:** Strict Transport Security (HSTS), X-Frame-Options: SAMEORIGIN, X-Content-Type-Options: nosniff, strict Permissions-Policy.
+- **Sitemap:** https://websitedevelopmentexpert.in/sitemap.xml (contains only verified indexable canonical URLs).

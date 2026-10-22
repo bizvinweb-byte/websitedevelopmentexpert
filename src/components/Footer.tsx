@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Globe, Mail, Phone, MapPin } from "lucide-react";
-import { siteConfig } from "@/lib/seo-data";
+import { Mail, Phone, MapPin, Building2, CheckCircle2 } from "lucide-react";
+import { siteConfig, ncrCities, topRemoteCities, toSlug } from "@/lib/seo-data";
 
 export default function Footer() {
   const currentYear = 2026;
 
   return (
     <footer className="border-t border-slate-100 bg-slate-950 text-slate-300">
-      <div className="mx-auto max-w-7xl px-4 pt-10 pb-24 sm:py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 pt-12 pb-24 sm:py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand & Overview */}
           <div className="lg:col-span-2 space-y-4">
@@ -38,45 +38,56 @@ export default function Footer() {
                 </a>
               </div>
             </div>
+
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              India&apos;s premier web development and digital engineering firm. We
-              engineer Google Page 1 SEO compliant, high-conversion web
-              applications for ambitious businesses.
+              Noida-based web development and digital engineering firm. We engineer high-speed Next.js web applications, Shopify stores, and enterprise custom websites for businesses across India.
             </p>
-            <div className="flex flex-col gap-2 pt-2 text-xs text-slate-300">
-              <span className="inline-flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-[#ff6b1e] shrink-0 mt-0.5" />
-                <span>
-                  {siteConfig.address.street}, {siteConfig.address.city},{" "}
-                  {siteConfig.address.region} - {siteConfig.address.postalCode}
+
+            {/* Honest Office Location Banner */}
+            <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-3 text-xs text-slate-300 space-y-2">
+              <div className="flex items-start gap-2">
+                <Building2 className="h-4 w-4 text-[#ff6b1e] shrink-0 mt-0.5" />
+                <span className="font-semibold text-white">
+                  Sole Physical Office (Noida HQ):
                 </span>
-              </span>
-              <a
-                href="tel:+919990613140"
-                className="inline-flex items-center gap-2 hover:text-[#ff6b1e] transition-colors"
-              >
-                <Phone className="h-4 w-4 text-[#ff6b1e] shrink-0" />
-                <span>{siteConfig.phone}</span>
-              </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="inline-flex items-center gap-2 hover:text-[#ff6b1e] transition-colors"
-              >
-                <Mail className="h-4 w-4 text-[#ff6b1e] shrink-0" />
-                <span>{siteConfig.email}</span>
-              </a>
+              </div>
+              <div className="flex items-start gap-2 pl-6">
+                <MapPin className="h-3.5 w-3.5 text-slate-400 shrink-0 mt-0.5" />
+                <span className="text-slate-400">
+                  {siteConfig.address.building}, {siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.region} - {siteConfig.address.postalCode}
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-4 pl-6 pt-1 text-slate-300">
+                <a
+                  href="tel:+919990613140"
+                  className="inline-flex items-center gap-1.5 hover:text-[#ff6b1e] transition-colors"
+                >
+                  <Phone className="h-3.5 w-3.5 text-[#ff6b1e]" />
+                  <span>{siteConfig.phone}</span>
+                </a>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="inline-flex items-center gap-1.5 hover:text-[#ff6b1e] transition-colors"
+                >
+                  <Mail className="h-3.5 w-3.5 text-[#ff6b1e]" />
+                  <span>{siteConfig.email}</span>
+                </a>
+              </div>
+              <p className="text-[11px] text-slate-400 pl-6 border-t border-slate-800/60 pt-2 leading-relaxed">
+                We serve clients across ALL of India via video calls, WhatsApp, and email, with on-site visits arranged upon request. We maintain NO offices outside Noida.
+              </p>
             </div>
           </div>
 
-          {/* Core Services */}
+          {/* National Services */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Services
+              National Services
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-400">
               <li>
                 <Link
-                  href="/#services"
+                  href="/services/custom-web-application-development"
                   className="hover:text-[#ff6b1e] transition"
                 >
                   Custom Web Apps
@@ -84,7 +95,15 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#services"
+                  href="/services/shopify-development-company"
+                  className="hover:text-[#ff6b1e] transition"
+                >
+                  Shopify Development
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/nextjs-development-company"
                   className="hover:text-[#ff6b1e] transition"
                 >
                   Next.js Engineering
@@ -92,203 +111,199 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#services"
+                  href="/services/ecommerce-website-development"
                   className="hover:text-[#ff6b1e] transition"
                 >
-                  Shopify &amp; E-Commerce
+                  E-Commerce Platforms
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#tech-stack"
+                  href="/services/wordpress-website-development"
                   className="hover:text-[#ff6b1e] transition"
                 >
-                  Technologies &amp; Frameworks
+                  WordPress Development
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#services"
-                  className="hover:text-[#ff6b1e] transition"
+                  href="/website-development-cost-in-india"
+                  className="hover:text-[#ff6b1e] text-[#ff6b1e] font-medium transition"
                 >
-                  UI/UX Architecture
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#services"
-                  className="hover:text-[#ff6b1e] transition"
-                >
-                  Technical SEO Audit
+                  Website Cost in India 2026
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company Links */}
+          {/* Company & Resources */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              Company
+              Company &amp; Hubs
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-400">
               <li>
                 <Link
-                  href="/#solutions"
+                  href="/website-development-company-in-india"
                   className="hover:text-[#ff6b1e] transition"
                 >
-                  Why WebDev Expert
+                  India-Wide Hub
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#process"
+                  href="/website-development-company-in-noida"
                   className="hover:text-[#ff6b1e] transition"
                 >
-                  Our Process
+                  Noida HQ Office
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#trends"
+                  href="/areas-we-serve"
                   className="hover:text-[#ff6b1e] transition"
                 >
-                  Latest Trends 2026
+                  Areas We Serve
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/#faqs"
+                  href="/about"
                   className="hover:text-[#ff6b1e] transition"
                 >
-                  Frequently Asked Questions
+                  About Brandmingo
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/reviews"
+                  className="hover:text-[#ff6b1e] text-slate-300 font-medium transition"
+                >
+                  Client Reviews &amp; Ratings
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/seo-checker"
+                  className="hover:text-[#ff6b1e] text-[#ff6b1e] font-medium transition"
+                >
+                  Free Website SEO Checker
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/glossary"
                   className="hover:text-[#ff6b1e] transition"
                 >
-                  Contact Our Engineers
+                  Tech &amp; SEO Glossary
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/portfolio"
+                  className="hover:text-[#ff6b1e] transition"
+                >
+                  Portfolio &amp; Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="hover:text-[#ff6b1e] transition"
+                >
+                  Technical Blog &amp; Guides
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="hover:text-[#ff6b1e] transition"
+                >
+                  Contact Noida Team
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* SEO & Compliance Standards */}
+          {/* Technical Engineering Standards */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-              SEO Standards
+              Engineering Standards
             </h3>
             <ul className="mt-4 space-y-2 text-xs text-slate-400">
               <li className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                100% Core Web Vitals Ready
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Next.js App Router &amp; SSR</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                Schema.org JSON-LD Enabled
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Core Web Vitals Optimization</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                Canonical &amp; OpenGraph Tags
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Schema.org JSON-LD Markup</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                Automated XML Sitemap
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Semantic HTML5 Architecture</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Clean Typescript &amp; Tailwind CSS</span>
+              </li>
+              <li className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Automated XML Sitemap Push</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Popular Locations & SEO Keywords Bar */}
+        {/* Delhi NCR Local Service Corridor */}
         <div className="mt-10 pt-8 border-t border-slate-800/80">
           <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
             <MapPin className="w-3.5 h-3.5 text-[#ff6b1e]" />
-            <span>Pan-India Project Delivery Coverage (Engineered from Noida HQ)</span>
+            <span>Delhi NCR Local Corridor (Engineered at Noida HQ, Sector 62)</span>
+          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-400">
+            {ncrCities.map((loc, idx) => (
+              <span key={loc.city} className="flex items-center gap-3">
+                <Link
+                  href={`/${toSlug(loc.city)}`}
+                  className="hover:text-[#ff6b1e] transition"
+                >
+                  Web Development {loc.city}
+                </Link>
+                {idx < ncrCities.length - 1 && <span className="text-slate-700">•</span>}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Top 10 Pan-India Remote Service Hubs */}
+        <div className="mt-6 pt-6 border-t border-slate-800/60">
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
+            <MapPin className="w-3.5 h-3.5 text-[#ff6b1e]" />
+            <span>Top National Hubs (Remote Project Delivery across India)</span>
           </p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-500">
-            <Link
-              href="/services/website-development-company-in-noida"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Noida
-            </Link>
+            {topRemoteCities.map((loc, idx) => (
+              <span key={loc.city} className="flex items-center gap-3">
+                <Link
+                  href={`/${toSlug(loc.city)}`}
+                  className="hover:text-[#ff6b1e] transition text-slate-400"
+                >
+                  Website Development {loc.city}
+                </Link>
+                {idx < topRemoteCities.length - 1 && <span className="text-slate-700">•</span>}
+              </span>
+            ))}
             <span className="text-slate-700">•</span>
             <Link
-              href="/services/website-development-company-in-delhi"
-              className="hover:text-[#ff6b1e] transition"
+              href="/areas-we-serve"
+              className="text-[#ff6b1e] hover:underline font-semibold"
             >
-              Website Development Company in Delhi
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-gurugram"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Gurugram
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-greater-noida"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Greater Noida
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-mumbai"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Mumbai
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-bengaluru"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Bengaluru
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-hyderabad"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Hyderabad
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-pune"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Pune
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-ahmedabad"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Ahmedabad
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-jaipur"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Jaipur
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-lucknow"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Lucknow
-            </Link>
-            <span className="text-slate-700">•</span>
-            <Link
-              href="/services/website-development-company-in-kolkata"
-              className="hover:text-[#ff6b1e] transition"
-            >
-              Website Development Company in Kolkata
+              View All Served Regions →
             </Link>
           </div>
         </div>
@@ -305,9 +320,9 @@ export default function Footer() {
             >
               Brandmingo
             </a>
-            . All rights reserved.
+            . Headquartered at Sector 62, Noida. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-5">
             <Link
               href="/privacy-policy"
               className="hover:text-slate-400 transition-colors"

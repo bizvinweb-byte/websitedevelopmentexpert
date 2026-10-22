@@ -1,0 +1,38 @@
+name: SEO & Lighthouse CI Audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  seo-and-performance-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Next.js Application
+        run: npm run build
+        env:
+          NEXT_PUBLIC_GA_ID: "G-TESTING"
+          NEXT_PUBLIC_GSC_VERIFICATION: "test-verification-token"
+
+      - name: Run Static Technical SEO Audit
+        run: npm run audit:seo
+
+      - name: Run Lighthouse CI Audit
+        run: |
+          npm install -g @lhci/cli@0.14.x
+          lhci autorun

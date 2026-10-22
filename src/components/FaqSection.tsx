@@ -12,18 +12,19 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/lib/seo-data";
 import { EnquiryButton } from "@/components/EnquiryModal";
-
-import { FAQ_DATA, FaqItem } from "@/lib/faq-data";
+import { FAQ_DATA } from "@/lib/faq-data";
 
 export default function FaqSection() {
-  const [openId, setOpenId] = useState<string>("best-company-india");
+  const [openIds, setOpenIds] = useState<Record<string, boolean>>({
+    "services-overview": true,
+  });
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
   const categories = [
     { id: "all", label: "All Questions" },
     { id: "general", label: "General & Services" },
     { id: "pricing", label: "Cost & Timelines" },
-    { id: "tech", label: "Speed & SEO" },
+    { id: "tech", label: "Speed & Tech SEO" },
     { id: "noida", label: "Noida & Delhi NCR" },
   ];
 
@@ -33,7 +34,10 @@ export default function FaqSection() {
       : FAQ_DATA.filter((f) => f.category === activeCategory);
 
   const toggleAccordion = (id: string) => {
-    setOpenId((prev) => (prev === id ? "" : id));
+    setOpenIds((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
 
   return (
@@ -42,12 +46,6 @@ export default function FaqSection() {
       id="faqs"
       aria-labelledby="faq-main-heading"
     >
-      {/* Anchor alias so both #faq and #faqs work */}
-      <span id="faq" className="absolute -top-24 left-0 pointer-events-none" />
-      {/* Background ambient accents */}
-      <div className="absolute top-1/4 left-0 -z-10 w-72 h-72 bg-[#ff6b1e]/5 blur-3xl rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-0 -z-10 w-96 h-96 bg-amber-100/30 blur-3xl rounded-full pointer-events-none" />
-
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header Badge & Title */}
         <div className="text-center max-w-3xl mx-auto">
@@ -64,7 +62,7 @@ export default function FaqSection() {
           </h2>
 
           <p className="mt-2.5 sm:mt-4 text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Everything you need to know about website development costs, modern Next.js technologies, Google rankings, and project delivery timelines.
+            Clear, transparent answers about website development costs, modern Next.js architecture, remote communication, and project delivery timelines.
           </p>
 
           {/* Interactive Category Filter Pills */}
@@ -72,6 +70,7 @@ export default function FaqSection() {
             {categories.map((cat) => (
               <button
                 key={cat.id}
+                type="button"
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                   activeCategory === cat.id
@@ -90,17 +89,18 @@ export default function FaqSection() {
           {/* Main Accordion Column */}
           <div className="lg:col-span-8 space-y-3 sm:space-y-3.5">
             {filteredFaqs.map((faq, index) => {
-              const isOpen = openId === faq.id;
+              const isOpen = !!openIds[faq.id];
               return (
                 <div
                   key={faq.id}
                   className={`rounded-xl sm:rounded-2xl border transition-all duration-300 overflow-hidden ${
                     isOpen
                       ? "border-[#ff6b1e]/60 bg-white shadow-md shadow-[#ff6b1e]/5 ring-1 ring-[#ff6b1e]/20"
-                      : "border-slate-200/90 bg-white/90 hover:border-slate-300 hover:bg-white shadow-xs"
+                      : "border-slate-200/90 bg-white hover:border-slate-300 shadow-xs"
                   }`}
                 >
                   <button
+                    type="button"
                     onClick={() => toggleAccordion(faq.id)}
                     aria-expanded={isOpen}
                     className="w-full text-left p-4 sm:p-5.5 flex items-start justify-between gap-3 sm:gap-4 transition-colors cursor-pointer select-none"
@@ -143,14 +143,16 @@ export default function FaqSection() {
                     </div>
                   </button>
 
-                  {/* Accordion Content with smooth expand */}
-                  {isOpen && (
-                    <div className="px-4 pb-4 sm:px-5.5 sm:pb-5.5 pt-0">
-                      <div className="border-t border-slate-100 pt-3 sm:pt-3.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        {faq.answer}
-                      </div>
+                  {/* Server-Rendered Accordion Content (Always in DOM for search crawlers) */}
+                  <div
+                    className={`px-4 pb-4 sm:px-5.5 sm:pb-5.5 pt-0 transition-all duration-200 ${
+                      isOpen ? "block" : "hidden"
+                    }`}
+                  >
+                    <div className="border-t border-slate-100 pt-3 sm:pt-3.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {faq.answer}
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             })}
@@ -162,18 +164,18 @@ export default function FaqSection() {
             <div className="rounded-2xl border border-[#ff6b1e]/20 bg-gradient-to-br from-[#fff5ee] via-white to-orange-50/50 p-5 sm:p-6 shadow-sm">
               <div className="flex items-center gap-2 text-xs font-bold text-[#ff6b1e] uppercase tracking-wider mb-2">
                 <Sparkles className="w-4 h-4 text-[#ff6b1e]" />
-                Have a Unique Project?
+                Custom Project Requirements?
               </div>
               <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                Speak with Our Lead Solutions Architect
+                Speak Directly with Our Web Engineering Team
               </h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                Get an instant quote, technical breakdown, and timeline estimate tailored to your exact business specifications.
+                Receive an itemized technical scope, stack recommendation, and timeline estimate for your business.
               </p>
 
               <div className="mt-4 pt-4 border-t border-orange-100/80 space-y-2.5">
                 <EnquiryButton className="w-full justify-center text-xs sm:text-sm font-bold py-3 shadow-md shadow-[#ff6b1e]/20">
-                  <span>Get Free Technical Scope</span>
+                  <span>Request Technical Proposal</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </EnquiryButton>
 
@@ -182,25 +184,25 @@ export default function FaqSection() {
                   className="w-full flex items-center justify-center gap-2 rounded-xl bg-white border border-slate-200 hover:border-[#ff6b1e] py-2.5 px-4 text-xs font-bold text-slate-800 hover:text-[#ff6b1e] transition-all shadow-2xs active:scale-95"
                 >
                   <PhoneCall className="w-3.5 h-3.5 text-[#ff6b1e]" />
-                  <span>Direct: {siteConfig.phone}</span>
+                  <span>Call: {siteConfig.phone}</span>
                 </a>
               </div>
             </div>
 
-            {/* Quick Guarantees Badge Box */}
+            {/* Guarantees Box */}
             <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 shadow-xs space-y-2.5">
               <div className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                The WebDev Expert Promise
+                Our Delivery Commitments
               </div>
               <div className="text-[11px] sm:text-xs text-slate-600 space-y-1.5">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#ff6b1e]" />
-                  <span>Sub-0.5s Page Load Guarantee</span>
+                  <span>Dedicated Project Manager &amp; WhatsApp Group</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#ff6b1e]" />
-                  <span>100% Responsive on all screen sizes</span>
+                  <span>Next.js Server-Side Rendered Architecture</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#ff6b1e]" />
@@ -208,7 +210,7 @@ export default function FaqSection() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#ff6b1e]" />
-                  <span>Automated Instant Brochure PDF</span>
+                  <span>Full Intellectual Property &amp; Code Ownership</span>
                 </div>
               </div>
             </div>

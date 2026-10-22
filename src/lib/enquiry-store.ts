@@ -8,9 +8,15 @@ export interface EnquiryRecord {
   phone: string;
   email?: string;
   service: string;
+  budgetRange?: string;
   location?: string;
   message?: string;
   pageUrl?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmTerm?: string;
+  utmContent?: string;
 }
 
 const DATA_DIR = path.join(process.cwd(), "data");

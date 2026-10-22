@@ -17,10 +17,12 @@ import {
   FileText,
 } from "lucide-react";
 import { siteConfig } from "@/lib/seo-data";
+import { getStoredUtmParams, trackFormSubmit } from "@/lib/tracking";
 
 interface ModalOptions {
   service?: string;
   location?: string;
+  budget?: string;
 }
 
 interface EnquiryContextType {
@@ -113,6 +115,8 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
     setError("");
 
     try {
+      const utm = getStoredUtmParams();
+
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -124,6 +128,7 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
           location,
           message,
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
+          ...utm,
         }),
       });
 
@@ -133,6 +138,7 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
       }
 
       setSuccess(true);
+      trackFormSubmit(service, "Modal Lead", "enquiry_modal");
       setFullName("");
       setPhone("");
       setEmail("");
