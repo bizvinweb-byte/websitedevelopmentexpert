@@ -34,8 +34,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/95 backdrop-blur-md transition-all shadow-2xs">
-      <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand Logo - Clean, prominent, no squishing badge */}
+      <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
+        {/* Brand Logo - Responsive sizing so it never overflows on small screens */}
         <div className="flex items-center shrink-0">
           <Link
             href="/"
@@ -45,9 +45,9 @@ export default function Header() {
             <Image
               src="/images/webdev-logo.png"
               alt="Website Development Expert"
-              width={220}
-              height={48}
-              className="h-9 sm:h-11 w-auto object-contain"
+              width={200}
+              height={44}
+              className="h-7 sm:h-9 md:h-11 w-auto max-w-[145px] sm:max-w-[200px] object-contain"
               priority
             />
           </Link>
@@ -358,8 +358,8 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Right CTA Actions - Clean, Never Wrapping */}
-        <div className="flex items-center gap-3 shrink-0">
+        {/* Right CTA Actions - Responsive & Clean for Mobile & Desktop */}
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <Link
             href="tel:+919990613140"
             className="hidden xl:inline-flex items-center gap-2 text-xs font-bold text-slate-700 hover:text-[#ff6b1e] px-2 py-2 transition-colors whitespace-nowrap shrink-0"
@@ -368,23 +368,33 @@ export default function Header() {
             <span>+91 99906 13140</span>
           </Link>
 
+          {/* Desktop/Tablet CTA Button */}
           <button
             type="button"
             onClick={() => openEnquiryModal()}
-            className="inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-[#ff6b1e] px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md shadow-[#ff6b1e]/25 hover:bg-[#e55510] transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#ff6b1e] focus:ring-offset-2 active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
+            className="hidden sm:inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full bg-[#ff6b1e] px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md shadow-[#ff6b1e]/25 hover:bg-[#e55510] transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#ff6b1e] focus:ring-offset-2 active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
           >
             <span>Start a Conversation</span>
             <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </button>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Quick Enquire Button */}
+          <button
+            type="button"
+            onClick={() => openEnquiryModal()}
+            className="sm:hidden inline-flex items-center justify-center gap-1 rounded-full bg-[#ff6b1e] px-3 py-1.5 text-xs font-bold text-white shadow-xs active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
+          >
+            <span>Enquire</span>
+          </button>
+
+          {/* Mobile Hamburger Toggle Button - Always visible and perfectly aligned */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
+            className="lg:hidden p-1.5 sm:p-2 rounded-xl text-slate-800 hover:bg-slate-100 active:bg-slate-200 transition-colors shrink-0 ml-0.5"
             aria-label="Toggle mobile menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-slate-900" /> : <Menu className="w-6 h-6 text-slate-900" />}
           </button>
         </div>
       </div>
